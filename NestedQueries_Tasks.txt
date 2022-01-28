@@ -1,0 +1,27 @@
+TASKS ON Aggregations, Nested Queries!!!
+
+1. Which last names appear more than once?
+2. Which actor has appeared in the most films?
+3. What is that average running time of all the films in the database?
+4. What is the average running time of films by category?
+5. How many movies have Robots in them?
+6. Find the movie(s) with the longest runtime.
+7. Count how many movies were released in 2010.
+8. Find the titles of all horror movies.
+
+1. SELECT last_name, COUNT(last_name) FROM actor GROUP BY last_name 
+ORDER BY COUNT(last_name) DESC
+;
+
+2. 
+
+
+3. SELECT AVG(length) FROM film; 115.272
+
+4. SELECT AVG(length) FROM film GROUP BY 
+ 
+5. SELECT COUNT(description) FROM film WHERE description LIKE '%Robot%'; 77
+
+6. SELECT title FROM film WHERE length = (SELECT MAX(length) FROM film);
+
+

@@ -1,0 +1,62 @@
+CREATE DATABASE Cinema1;
+USE Cinema1;
+
+CREATE TABLE customers (Name VARCHAR(30),
+Address VARCHAR(65),
+Phone CHAR(11),
+Email VARCHAR(35),
+new_customer BOOLEAN);
+
+DESCRIBE customer;
+
+CREATE TABLE bookings (Booking_date DATE,
+Booking_status VARCHAR(12),
+Bookings_number TINYINT);
+
+DESCRIBE bookings;
+
+CREATE TABLE films (Title VARCHAR(45),
+Price TINYINT,
+Display_date DATE,
+Display_time TIME,
+Category  VARCHAR(30));
+
+DESCRIBE films;
+
+DESCRIBE bookings;
+DROP TABLE customer;
+CREATE TABLE customer(customer_id INT,
+customer_name VARCHAR(30),
+address VARCHAR(65),
+phone CHAR(11),
+email VARCHAR(35));
+DROP TABLE customer;
+
+CREATE TABLE customer (customer_name VARCHAR(30) UNIQUE,
+address VARCHAR(65) NOT NULL,
+phone CHAR(11) UNIQUE,
+email VARCHAR(35) UNIQUE);
+DROP TABLE customer;
+CREATE TABLE customer (customer_id INT AUTO_INCREMENT,
+PRIMARY KEY (customer_id),
+customer_name VARCHAR(30) UNIQUE,
+address VARCHAR(65) NOT NULL,
+phone CHAR(11) UNIQUE,
+email VARCHAR(35) UNIQUE);
+
+DROP TABLE customer;
+
+CREATE TABLE customer (customer_id INT AUTO_INCREMENT,
+PRIMARY KEY (customer_id),
+customer_name VARCHAR(30) UNIQUE,
+address VARCHAR(65) NOT NULL,
+phone CHAR(11) UNIQUE,
+email VARCHAR(35) UNIQUE);
+
+DESCRIBE customer;
+
+CREATE TABLE bookings (booking_id INT AUTO_INCREMENT PRIMARY KEY,
+customer_id INT,
+film_id INT,
+FOREIGN KEY (customer_id) REFERENCES customers (customer_id),
+FOREIGN KEY (film_id) REFERENCES films (film_id))

@@ -1,0 +1,31 @@
+CREATE
+
+INSERT INTO customers (customer_name, address, ehone, email, new_customer) VALUES ('Eva','11 Sudhurst Grove', '07598699577', 
+'ewa.szczerba@icloud.com', true), ('Adam', '12 St Mary', '07444411111', 'adam@gmail.com', true), 
+('Roy', '1 Dog Close', '07777777777', 'roy@gmail.com', true);
+
+
+
+INSERT INTO films (film_title, Price, Display_date, Display_time, Category) VALUES ('The Matrix Resurrections', '12', 
+'2022-01-25', '19:00:00.00001', 'Sci-Fi/ Action');
+
+INSERT INTO films (film_title, Price, Display_date, Display_time, Category) 
+VALUES ('Cat1', '8', '2022-01-26', '17:30:00', 'Cartoon'), ('Dog1', '8', '20-01-26', '17:30:00', 'Cartoon');
+
+INSERT INTO bookings (customer_id, film_id) VALUES (1,1);
+
+DELETE FROM customers WHERE customer_id = 8;
+
+DELETE FROM bookings;
+
+DELETE FROM films WHERE film_title = 'Dog1' AND film_id = 3;
+
+DELETE FROM films WHERE film_title = 'Cat1' OR film_id = 1;
+
+UPDATE customers 
+SET email = 'eva@gmail.com' WHERE customer_id = 1;
+
+UPDATE films SET film_title = 'Dog1', Price = '9', Display_date = '2022-01-27' 
+WHERE film_title = 'Cat1';
+
+UPDATE films SET Price = '10' WHERE Category = 'Cartoon';

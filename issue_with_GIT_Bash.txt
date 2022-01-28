@@ -1,0 +1,16 @@
+
+Ewa@LAPTOP-S3ML77VH MINGW64 ~/Week2/MySQL_Week2 (main)
+$ git remote -v
+origin  git@github.com:EwaSzczerbaGitHub/MySQL.git (fetch)
+origin  git@github.com:EwaSzczerbaGitHub/MySQL.git (push)
+
+Ewa@LAPTOP-S3ML77VH MINGW64 ~/Week2/MySQL_Week2 (main)
+$ git push -u origin main
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+Ewa@LAPTOP-S3ML77VH MINGW64 ~/Week2/MySQL_Week2 (main)
+$

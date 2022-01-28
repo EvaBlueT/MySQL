@@ -1,0 +1,56 @@
+Select all Actors from the table.
+Find the actor with the first name “John”.
+Find all actors with the surname “Neeson”.
+Find all actors with Id numbers divisible by 10.
+What is the description of the movie with ID of 100?
+Find every movie with a rating of “R”.
+
+NOT only Joins!
+
+1. Find every movie except those with a rating of “R”.
+2. Find the 10 shortest movies.
+3. Now return only the movie titles.
+4. Find all movies with Deleted Scenes.
+5. Which last names are not repeated?
+6. Is ‘Academy Dinosaur’ available for rent from Store 1?
+7. When is ‘Academy Dinosaur’ due?
+8. Which last names appear more than once?
+
+9. Which actor has appeared in the most films?
+
+SELECT actor.first_name, actor.last_name , COUNT(actor.actor_id)
+FROM actor a 
+JOIN film_actor f_a ON a.actor_id = f_a.actor_id;
+
+
+SELECT first_name, last_name FROM actor WHERE actor_id = (
+SELECT actor_id FROM film_actor GROUP BY actor_id ORDER BY COUNT(actor_id) DESC LIMIT 1);
+
+10. What is that average running time of all the films in the database?
+
+SELECT AVG(length) FROM film; 115.2720
+
+11. What is the average running time of films by category?
+
+SELECT film.title, AVG(length), film_category.category_id FROM film JOIN film_category 
+ON film.film_id = film_category.film_id 
+GROUP BY film_category.category_id; 
+
+12. How many movies have Robot in them?
+
+
+13. Find the movie(s) with the longest runtime.
+
+
+14. Count how many movies were released in 2010.
+15. Find the titles of all horror movies.
+16. Return the full name of the staff member – in a column named full_name – with the ID of 1.
+17. Retrieve all movies that Fred Costner has appeared in.
+18. Find out which location has the most copies of BUCKET BROTHERHOOD.
+19. How many distinct countries are there?
+20. What are the names of all the languages in the database (sorted alphabetically)?
+21. Return the full names (first and last) of actors with “son” in their last name, ordered by their first name.
+22. Create a list of categories and the number of films for each category.
+23. Create a list of actors and the number of movies by each actor.
+
+

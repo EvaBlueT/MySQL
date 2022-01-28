@@ -1,0 +1,62 @@
+Aggregate Functions
+
+SELECT * FROM country;
+
+SELECT COUNT(country) FROM country;
+SELECT * FROM film;
+
+SELECT COUNT(title) FROM film WHERE length > 90;
+
+SELECT COUNT(title) FROM film WHERE description LIKE '%egg%';
+
+SELECT SUM(Population) FROM city;
+
+SELECT SUM(Population) FROM city WHERE CountyCode LIKE 'AUS';
+
+SELECT SUM(Population0 FROM city WHERE CountryCode != 'ESP'; not in spain
+
+SELECT MIN(Population) FROM city;
+
+SELECT CountryCode, MAX(Population) FROM city GROUP BY CountryCode;
+
+Exercises
+1. Find the average SurfaceArea of all countries
+2.  Max Life Expectancy
+3. Min GNP
+4. SUM of Population from all countries
+5. Surface Area Grouped by REGION
+6. Count the names with indepedent year not being null
+
+Stretch goal
+Use WHERE to add more specific queries
+
+1. SELECT AVG(SurfaceArea) FROM country;
+2. SELECT MAX(LifeExpectancy) FROM country;
+3. SELECT MIN(GNP) FROM country ;
+4. SELECT SUM(Population) FROM country;
+5. SELECT Region, CODE, SurfaceArea FROM country GROUP BY Region ORDER BY SurfaceArea;
+6. SELECT COUNT(Name) FROM country WHERE IndepYear != 'Null';
+
+STETCH GOAL:
+7. SELECT Region, MIN(GNP) FROM country GROUP BY Region ORDER BY MIN(GNP);
+
+NESTED Queries
+
+1. SELECT MIN(SurfaceArea) FROM country;
+
+2. SELECT Name, MIN(SurfaceArea) FROM country WHERE SurfaceArea = x
+
+Nested query:
+SELECT Name, MIN(SurfaceArea) FROM country WHERE SurfaceArea = (SELECT MIN(SurfaceArea) FROM country);
+
+
+Question: Get the Name, Continent, Region, life expectancy of the country with the highest life expectancy under 75
+
+Answer: SELECT Name, Continent, Region, LifeExpectancy FROM Country WHERE LifeExpectancy = 
+(SELECT MAX(LifeExpectancy) FROM country WHERE LifeExpectancy < 75)
+
+
+
+
+
+

@@ -1,0 +1,28 @@
+CREATE DATABASE Cinema1;
+USE Cinema1;
+
+CREATE TABLE customers (customer_id INT AUTO_INCREMENT PRIMARY KEY,
+customer_name VARCHAR(30),
+address VARCHAR(65),
+ehone CHAR(11),
+email VARCHAR(35),
+new_customer BOOLEAN);
+
+DESCRIBE customers;
+
+CREATE TABLE films (film_id INT AUTO_INCREMENT PRIMARY KEY,
+film_title VARCHAR(45),
+Price TINYINT,
+Display_date DATE,
+Display_time TIME,
+Category  VARCHAR(30));
+
+DESCRIBE films;
+
+CREATE TABLE bookings (booking_id INT AUTO_INCREMENT PRIMARY KEY,
+customer_id INT,
+film_id INT,
+FOREIGN KEY (customer_id) REFERENCES customers (customer_id),
+FOREIGN KEY (film_id) REFERENCES films (film_id));
+
+DESCRIBE bookings;
